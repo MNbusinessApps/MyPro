@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MyProtection — Find your MyProtection Number</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <h1>Find your MyProtection Number</h1>
+      <p class="lead">
+        It takes about 10 minutes. No quotes. No spam. Just clarity.
+      </p>
+      <p class="lead small">
+        We'll show you how protected you really are — not just your car,
+        but your paycheck, your savings/investments, and your future goals.
+        Because we can fix your car — that's easy. Protecting your future? That's what really matters.
+      </p>
+      <button id="startBtn" class="primary">Find MyProtection Number</button>
+    </header>
+
+    <section id="formSection" class="form-section" style="display: none;">
+      <h2>Let's Get Started</h2>
+      <p class="subtitle">Answer these questions to calculate your protection needs</p>
+      
+      <form id="protectionForm">
+        <div class="form-group">
+          <label for="homeValue">Home Value</label>
+          <p class="question-explanation">Why we ask: Your home equity can be at risk in a lawsuit. Knowing its value helps identify what's truly on the line.</p>
+          <div class="input-wrapper">
+            <span class="currency">$</span>
+            <input type="number" id="homeValue" name="homeValue" placeholder="0" min="0" step="1000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="vehicleValue">Total Vehicle Value (all vehicles combined)</label>
+          <p class="question-explanation">Why we ask: If you're at fault in a serious accident, vehicles titled in your name can be used to satisfy judgments.</p>
+          <div class="input-wrapper">
+            <span class="currency">$</span>
+            <input type="number" id="vehicleValue" name="vehicleValue" placeholder="0" min="0" step="1000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="savingsValue">Savings & Investments (no cap)</label>
+          <p class="question-explanation">Why we ask: Savings, retirement accounts, and investments are part of what you've built. If a large liability exceeds your coverage, those assets are at risk.</p>
+          <div class="input-wrapper">
+            <span class="currency">$</span>
+            <input type="number" id="savingsValue" name="savingsValue" placeholder="0" min="0" step="1000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="incomeValue">Annual Household Income</label>
+          <p class="question-explanation">Why we ask: Courts can garnish wages for liability judgments. Higher income increases future exposure.</p>
+          <div class="input-wrapper">
+            <span class="currency">$</span>
+            <input type="number" id="incomeValue" name="incomeValue" placeholder="0" min="0" step="1000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lifeInsurance">Life Insurance</label>
+          <p class="question-explanation">Why we ask: Life insurance protects your family after the worst happens — it's part of your overall protection plan.</p>
+          <div class="input-wrapper">
+            <span class="currency">$</span>
+            <input type="number" id="lifeInsurance" name="lifeInsurance" placeholder="0" min="0" step="10000" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="currentCoverage">Current Auto Liability Coverage</label>
+          <p class="question-explanation">Why we ask: To match your current limits (e.g., 100/300) against what your assets and income require.</p>
+          <select id="currentCoverage" name="currentCoverage" required>
+            <option value="">Select your current coverage</option>
+            <option value="25/50">25/50</option>
+            <option value="30/60">30/60</option>
+            <option value="50/100">50/100</option>
+            <option value="100/300">100/300</option>
+            <option value="250/500">250/500</option>
+            <option value="500/500">500/500</option>
+            <option value="500/1000">500/1000</option>
+            <option value="Not sure">Not sure</option>
+          </select>
+        </div>
+
+        <button type="submit" id="calcBtn" class="primary">Calculate MyProtection Number</button>
+      </form>
+    </section>
+
+    <section id="resultSection" class="result-section" style="display: none;">
+      <h2>Your MyProtection Number</h2>
+      <div id="resultBox" class="result-box">
+        <div class="exposure-amount">
+          <span class="label">Total Protection Exposure:</span>
+          <span id="exposureAmount" class="amount">$0</span>
+        </div>
+        <div class="recommendation">
+          <span class="label">Recommended Coverage:</span>
+          <span id="recommendation" class="coverage">50/100</span>
+        </div>
+        <div class="current-gap">
+          <span class="label">Gap Analysis:</span>
+          <span id="gapAnalysis" class="gap">Insufficient coverage</span>
+        </div>
+      </div>
+      
+      <div class="next-steps">
+        <h3>Next Steps</h3>
+        <p>Based on your results, you may want to review your coverage limits to better protect your assets and future.</p>
+        
+        <div class="action-buttons">
+          <button id="sendBtn" class="secondary">Email My Results</button>
+          <button id="bookBtn" class="primary">Book Appointment</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="emailSection" class="email-section" style="display: none;">
+      <h2>Send Your Results</h2>
+      <form id="emailForm">
+        <div class="form-group">
+          <label for="userName">Your Name</label>
+          <input type="text" id="userName" name="userName" required>
+        </div>
+        <div class="form-group">
+          <label for="userEmail">Your Email</label>
+          <input type="email" id="userEmail" name="userEmail" required>
+        </div>
+        <button type="submit" class="primary">Send Results</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>MyProtection is an educational tool created by Tre Scott, Agency Owner affiliated with Country Financial.</p>
+      <p>This is not a quote, offer, or guarantee of coverage. No data is stored by this app — only sent by user choice.</p>
+      <p class="copyright">© 2025 MyProtection.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
